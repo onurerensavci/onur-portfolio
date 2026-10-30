@@ -55,12 +55,17 @@ h1 .role em{font-style:normal;color:var(--ink)}
 .lede{margin-top:40px;max-width:30ch;font-size:clamp(17px,1.5vw,21px);color:var(--mute);line-height:1.45}
 .lede strong{color:var(--ink);font-weight:500}
 
-/* reel */
+/* reel — wider than other sections so 4K/ultrawide screens fill the showreel */
 .reel{padding-block:16px 120px}
+.reel.wrap{max-width:min(1760px,94vw)}
 .reel .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
-.frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;background:#000;
-  box-shadow:0 0 0 1px var(--line),0 40px 120px -40px rgba(59,130,246,.35)}
+.frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:18px;overflow:hidden;background:#000;
+  box-shadow:0 0 0 1px var(--line),0 48px 140px -48px rgba(59,130,246,.4)}
 .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:1800px){
+  .reel.wrap{max-width:min(2000px,90vw)}
+  .frame{border-radius:20px}
+}
 
 /* marquee */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;z-index:1;padding:22px 0}
